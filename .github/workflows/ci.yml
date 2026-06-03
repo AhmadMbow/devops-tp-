@@ -64,11 +64,16 @@ jobs:
   # ---------------------------------------------------------------------------
   # Job 3 (Avance) : deploiement sur un serveur distant via SSH.
   # Ne s'execute qu'apres un push d'image reussi.
+  #
+  # Ce job est volontairement IGNORE (skipped) tant qu'on n'a pas de serveur :
+  # il ne tourne que si la variable de depot ENABLE_SSH_DEPLOY vaut 'true'
+  # (Settings -> Secrets and variables -> Actions -> onglet "Variables").
+  # Cela evite de faire echouer le pipeline en l'absence de secrets SSH.
   # ---------------------------------------------------------------------------
   deploy:
     needs: docker
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.ENABLE_SSH_DEPLOY == 'true' }}
     steps:
       - name: Deploiement via SSH
         uses: appleboy/ssh-action@v1.0.3
