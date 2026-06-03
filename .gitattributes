@@ -1,0 +1,8 @@
+# Normalisation des fins de ligne
+* text=auto
+
+# Les scripts shell DOIVENT rester en LF (sinon ils plantent sous Linux)
+*.sh text eol=lf
+
+# Fichiers binaires : pas de conversion
+*.png binary

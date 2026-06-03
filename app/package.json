@@ -1,0 +1,25 @@
+{
+  "name": "mon-app",
+  "version": "1.0.0",
+  "description": "API Express simple pour le TP Automatisation DevOps (UCAD)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest --runInBand",
+    "build": "echo \"Pas d'etape de build necessaire pour cette app\" && exit 0"
+  },
+  "keywords": [
+    "devops",
+    "ci-cd",
+    "express"
+  ],
+  "author": "Etudiant UCAD",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}

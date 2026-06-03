@@ -1,0 +1,20 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Logs et runtime du script
+deploy.log
+app.log
+.app.pid
+mon_app/
+
+# Terraform - NE JAMAIS versionner l'etat ni les secrets
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+
+# OS
+.DS_Store
+Thumbs.db
