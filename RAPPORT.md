@@ -178,10 +178,14 @@ publique. Commandes : `terraform init`, `plan`, `apply`, `destroy`.
 
 ![Figure 3 - Ping pong](captures/03-ping-pong.png)
 
-**Figure 4 *(bonus)* — Pipeline GitHub Actions au vert**
+**Figure 4 *(bonus)* — Pipeline GitHub Actions au vert (Success)**
 
-> _Capture à ajouter après le push sur GitHub : onglet **Actions** montrant_
-> _les jobs `build-and-test` / `docker` réussis._
+![Figure 4 - Pipeline Actions](captures/04-pipeline-actions.png)
+
+Le run se termine en **Success** : `build-and-test` ✅ et `docker` ✅ (image
+construite et poussée sur Docker Hub : `ahmaddock/mon-app`). Le job `deploy`
+apparaît en **Skipped** car il n'est exécuté que si un serveur SSH est configuré
+(variable `ENABLE_SSH_DEPLOY=true`), ce qui évite de faire échouer le pipeline.
 
 ---
 
